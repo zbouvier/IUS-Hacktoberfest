@@ -123,9 +123,9 @@ Thirdly, copy the code of the previous person, and edit it to your heart's conte
             "favoriteLanguages": ["Python", "JavaScript"],
             "hobbies": [""]
         }
-    }  
+    },  
     ]
 }
 ```
 
-Please note that there is no comma at the end of your new person.
+Please note that there **is** no comma at the end of your new person. Technically this makes it not valid JSON, however in order to allow for easy merges, the program accounts for the trailing comma at the end.

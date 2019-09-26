@@ -128,4 +128,6 @@ Thirdly, copy the code of the previous person, and edit it to your heart's conte
 }
 ```
 
-Please note that there **is** no comma at the end of your new person. Technically this makes it not valid JSON, however in order to allow for easy merges, the program accounts for the trailing comma at the end.
+Please note that there **is not** a comma at the end of your new person.
+
+Once you've successfull added your person. Please run py dataPresenter.py to make sure your json was formatted correctly.

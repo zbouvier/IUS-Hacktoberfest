@@ -1,0 +1,32 @@
+{
+    "people": 
+    [
+    {
+        "name": "Zach Bouvier",
+        "major": "Computer Science - Math and Science",
+        "role": "Student",
+        "year": "Freshman",
+        "profile": "https://github.com/zbouvier",
+        "optionalInformation": 
+        {
+            "email": "zbouvier@iu.edu",
+            "favoriteLanguages": ["Python", "Chef", "F#"],
+            "hobbies": ["Long walks on the beach", "Yelling at everybody", "Big Data"]
+        }
+    },
+    {
+        "name": "Chris Sexton",
+        "major": "Computer Science",
+        "role": "Professor",
+        "year": "",
+        "profile": "https://github.com/chrissexton",
+        "optionalInformation": 
+        {
+            "email": "",
+            "favoriteLanguages": ["Go", "F#"],
+            "hobbies": ["Cats", "Giving Hard Homework Assignments", "Reddit"]
+        }
+    }
+    ]
+}
+

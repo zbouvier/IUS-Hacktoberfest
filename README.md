@@ -123,7 +123,7 @@ Thirdly, copy the code of the previous person, and edit it to your heart's conte
             "favoriteLanguages": ["Python", "JavaScript"],
             "hobbies": [""]
         }
-    },  
+    }
     ]
 }
 ```

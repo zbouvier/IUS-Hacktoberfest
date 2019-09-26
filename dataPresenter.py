@@ -26,5 +26,4 @@ labels = []
 values = []
 parseLabels()
 fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
-fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
 fig.show()

@@ -111,7 +111,7 @@ Thirdly, copy the code of the previous person, and edit it to your heart's conte
             "hobbies": ["Cats", "Giving Hard Homework Assignments", "Reddit"]
         }
     },
-        {
+    {
         "name": "John Smith",
         "major": "Informatics",
         "role": "Student",

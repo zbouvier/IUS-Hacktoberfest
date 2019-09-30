@@ -58,7 +58,6 @@ Secondly, you want to add a comma after the previous person
         "profile": "https://github.com/zbouvier",
         "optionalInformation":
         {
-            "email": "zbouvier@iu.edu",
             "favoriteLanguages": ["Python", "Chef", "F#"],
             "hobbies": ["Long walks on the beach", "Yelling at everybody", "Big Data"]
         }
@@ -93,7 +92,6 @@ Thirdly, copy the code of the previous person, and edit it to your heart's conte
         "profile": "https://github.com/zbouvier",
         "optionalInformation":
         {
-            "email": "zbouvier@iu.edu",
             "favoriteLanguages": ["Python", "Chef", "F#"],
             "hobbies": ["Long walks on the beach", "Yelling at everybody", "Big Data"]
         }

@@ -9,7 +9,6 @@
         "profile": "https://github.com/zbouvier",
         "optionalInformation": 
         {
-            "email": "zbouvier@iu.edu",
             "favoriteLanguages": ["Python", "Chef", "F#"],
             "hobbies": ["Long walks on the beach", "Yelling at everybody", "Big Data"]
         }
@@ -22,7 +21,6 @@
         "profile": "https://github.com/chrissexton",
         "optionalInformation": 
         {
-            "email": "",
             "favoriteLanguages": ["Go", "F#"],
             "hobbies": ["Cats", "Giving Hard Homework Assignments", "Reddit"]
         }

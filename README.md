@@ -22,7 +22,6 @@ First: Open the data.json file. You should see something simliar to this:
         "profile": "https://github.com/zbouvier",
         "optionalInformation":
         {
-            "email": "zbouvier@iu.edu",
             "favoriteLanguages": ["Python", "Chef", "F#"],
             "hobbies": ["Long walks on the beach", "Yelling at everybody", "Big Data"]
         }
@@ -35,7 +34,6 @@ First: Open the data.json file. You should see something simliar to this:
         "profile": "https://github.com/chrissexton",
         "optionalInformation":
         {
-            "email": "",
             "favoriteLanguages": ["Go", "F#"],
             "hobbies": ["Cats", "Giving Hard Homework Assignments", "Reddit"]
         }
@@ -73,7 +71,6 @@ Secondly, you want to add a comma after the previous person
         "profile": "https://github.com/chrissexton",
         "optionalInformation":
         {
-            "email": "",
             "favoriteLanguages": ["Go", "F#"],
             "hobbies": ["Cats", "Giving Hard Homework Assignments", "Reddit"]
         }
@@ -109,7 +106,6 @@ Thirdly, copy the code of the previous person, and edit it to your heart's conte
         "profile": "https://github.com/chrissexton",
         "optionalInformation":
         {
-            "email": "",
             "favoriteLanguages": ["Go", "F#"],
             "hobbies": ["Cats", "Giving Hard Homework Assignments", "Reddit"]
         }
@@ -122,7 +118,6 @@ Thirdly, copy the code of the previous person, and edit it to your heart's conte
         "profile": "https://github.com/<yourGithubUsername>",
         "optionalInformation":
         {
-            "email": "yourIUemail@iu.edu",
             "favoriteLanguages": ["Python", "JavaScript"],
             "hobbies": [""]
         }

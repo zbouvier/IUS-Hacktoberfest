@@ -1,29 +1,27 @@
+from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-import json
+from dataProcessor import parseLabels, parseLangs
 
-def parseLabels():
-    with open('data.json') as json_file:
-        data = json.load(json_file)
+years = parseLabels()
+langs = parseLangs()
 
-    for p in data['people']:
-        userLabel = p['year']
-        if(userLabel == ''):
-            userLabel = 'Professor'
-        if(userLabel not in labels):
-            labels.append(userLabel)
-            values.append(1)
-        else:
-            values[labels.index(userLabel)] = values[labels.index(userLabel)] + 1
-    print(labels)
-    print(values)
+#make the plotly results
 
-    
-        
+fig = make_subplots(
+    rows=1, cols=2,
+    specs=[[{"type": "xy"}, {"type": "domain"}]],
+)
+
+fig.add_trace(go.Bar(y = list(langs.values()), x = list(langs.keys()), showlegend=False),
+              row=1, col=1)
 
 
-    
-labels = []
-values = []
-parseLabels()
-fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
+fig.add_trace(go.Pie(values = list(years.values()), labels = list(years.keys())),
+              row=1, col=2)
+
+
+fig.update_layout(height=600)
+
 fig.show()
+
+

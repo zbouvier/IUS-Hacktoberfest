@@ -14,6 +14,18 @@
         }
     },
     {
+        "name": "Matthew Hartman",
+        "major": "Computer Science, Math",
+        "role": "Student",
+        "year": "Junior",
+        "profile": "https://github.com/matdhart",
+        "optionalInformation": 
+        {
+            "favoriteLanguages": ["R", "Haskell", "Rust"],
+            "hobbies": ["Hanging out @ IUS"]
+        }
+    },
+    {
         "name": "Chris Sexton",
         "major": "Computer Science",
         "role": "Professor",

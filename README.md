@@ -127,3 +127,38 @@ Thirdly, copy the code of the previous person, and edit it to your heart's conte
 Please note that there **is not** a comma at the end of your new person.
 
 Once you've successfull added your person. Please run py dataPresenter.py to make sure your json was formatted correctly.
+
+
+## Running IUS-Hacktoberfest in a python virtual environment
+
+### Pre-work
+
+We need to set up a [python venv](https://docs.python.org/3/library/venv.html) first. We'll need to do this in Python 3.
+
+So, using your Python 3 installation (verify version with `python --version` or `python3 --version`), change into this source directory and run:
+
+`python -m venv .venv` or `python3 -m venv .venv` depending on your set up. You can name your venv folder whatever you wish (.venv is just a convention), and even create them elsewhere besides this directory. It only matters that you do create it and activate the venv so you keep your global python install clean. Good python hygiene. ;)
+
+Then let's activate the venv.  This needs to happen EVERY time we want to run this project, so don't forget:
+
+`source .venv/bin/activate`
+
+### Install dependencies
+
+Haven't installed the dependencies before?
+
+`pip install -r requirements.txt`
+
+This only needs to be done on fresh install, or if dependencies change obviously.
+
+### Run the app
+
+Now we just run the app:
+
+`python dataPresenter.py`
+
+### Done!
+
+Since we're now done, we can deactivate the venv (or just close your terminal session):
+
+`deactivate`

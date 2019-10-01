@@ -2,7 +2,24 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json, argparse, sys
 
-TITLE  = 'HACKTOBER'
+TITLE                    = 'HACKTOBER'
+SUBPLOT_VERTICAL_SPACING = 0.05
+SUBPLOT_HEIGHT           = 500
+LINE_STYLE               = {
+                            'color' : '#000000',
+                            'width' : 2
+                           }
+SUBPLOT_FONT_SIZE        = 12
+TABLE_HEADER_FONT_SIZE   = 25
+TABLE_BODY_FONT_SIZE     = 20
+TABLE_LINE_COLOR         = 'black'
+TABLE_HEADER_FILL_COLOR  = 'darkred'
+TABLE_BODY_FILL_COLOR    = 'firebrick'
+TABLE_TEXT_ALIGNMENT     = 'center'
+TABLE_HEADER_FONT_COLOR  = 'white'
+TABLE_BODY_FONT_COLOR    = 'white'
+TABLE_HEADER_ROW_HEIGHT  = 60
+TABLE_BODY_ROW_HEIGHT    = 40
 
 
 def checkFields(fields):
@@ -28,21 +45,25 @@ def dictToFig(dictn):
     """
     labels = list(dictn.keys())
     values = list(dictn.values())
-    return go.Pie(labels = labels, values = values)
+    return go.Pie(labels = labels, values = values, 
+                  textinfo='label',
+                  textfont_size=SUBPLOT_FONT_SIZE,
+                  marker=dict(line=LINE_STYLE))
 
 def buildGraphs(fields):
     """
     """
     
-    names      = []
-    major      = {}
-    role       = {}
-    year       = {}
-    profile    = []
-    email      = []
-    favLang    = {}
-    hobbies    = {}
-    graphSpecs = []
+    names         = []
+    major         = {}
+    role          = {}
+    year          = {}
+    profile       = []
+    email         = []
+    favLang       = {}
+    hobbies       = {}
+    graphSpecs    = []
+    subPlotTitles = []
     
     # Get data from JSON file
     with open('data.json') as json_file:
@@ -70,18 +91,24 @@ def buildGraphs(fields):
             
     if(fields.showName) or (fields.showProfile) or (fields.showEmail):
         graphSpecs.append([{'type' : 'table'}])
+        subPlotTitles.append('Participant Information')
     if(fields.showMajor):
         graphSpecs.append([{'type' : 'pie'}])
+        subPlotTitles.append('Majors')
     if(fields.showRole):
         graphSpecs.append([{'type' : 'pie'}])
+        subPlotTitles.append('Roles')
     if(fields.showYear):
         graphSpecs.append([{'type' : 'pie'}])
+        subPlotTitles.append('Year')
     if(fields.showFavLang):
         graphSpecs.append([{'type' : 'pie'}])
+        subPlotTitles.append('Favorite Language')
     if(fields.showHobbies):
         graphSpecs.append([{'type' : 'pie'}])
+        subPlotTitles.append('Hobbies')
     
-    allFigs = make_subplots(rows = len(graphSpecs),cols = 1, vertical_spacing = 0.05, specs = graphSpecs)
+    allFigs = make_subplots(rows = len(graphSpecs),cols = 1, vertical_spacing = SUBPLOT_VERTICAL_SPACING, specs = graphSpecs, subplot_titles = subPlotTitles)
     rowCounter = 1
     
     if(fields.showName) or (fields.showProfile) or (fields.showEmail):
@@ -97,8 +124,19 @@ def buildGraphs(fields):
             headerLabels.append('Email')
             values.append(email)
         
-        personalInfoTable = go.Table(header = dict(values=headerLabels,font=dict(size=10),align="center"),
-                                     cells  = dict(values=values, align = "left"))
+        personalInfoTable = go.Table(header = dict(values=headerLabels,
+                                                   font=dict(color=TABLE_HEADER_FONT_COLOR,size=TABLE_HEADER_FONT_SIZE),
+                                                   align = TABLE_TEXT_ALIGNMENT,
+                                                   line_color = TABLE_LINE_COLOR,
+                                                   fill_color = TABLE_HEADER_FILL_COLOR,
+                                                   height = TABLE_HEADER_ROW_HEIGHT),
+                                     cells  = dict(values=values, 
+                                                   font=dict(color=TABLE_BODY_FONT_COLOR,size=TABLE_BODY_FONT_SIZE),
+                                                   align = TABLE_TEXT_ALIGNMENT,
+                                                   line_color = TABLE_LINE_COLOR,
+                                                   fill_color = TABLE_BODY_FILL_COLOR,
+                                                   height = TABLE_BODY_ROW_HEIGHT)
+                                     )
         allFigs.add_trace(personalInfoTable,row=rowCounter,col=1)
         rowCounter += 1
         
@@ -122,7 +160,7 @@ def buildGraphs(fields):
         allFigs.add_trace(dictToFig(hobbies),row=rowCounter,col=1)
         rowCounter += 1
     
-    allFigs.update_layout(title_text=TITLE)    
+    allFigs.update_layout(height=(rowCounter*SUBPLOT_HEIGHT),title_text=TITLE,showlegend=False)    
     allFigs.show()
 
 # Create a Parser Object to Read in Command Line Input

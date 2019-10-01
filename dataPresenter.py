@@ -59,7 +59,6 @@ def buildGraphs(fields):
     role          = {}
     year          = {}
     profile       = []
-    email         = []
     favLang       = {}
     hobbies       = {}
     graphSpecs    = []
@@ -82,14 +81,12 @@ def buildGraphs(fields):
             appendDict(year,person['year'])
         if(fields.showProfile):
             profile.append(person['profile'])
-        if(fields.showEmail):
-            email.append(person['optionalInformation']['email'])
         if(fields.showFavLang):
             appendDict(favLang,person['optionalInformation']['favoriteLanguages'])
         if(fields.showHobbies):
             appendDict(hobbies,person['optionalInformation']['hobbies'])
             
-    if(fields.showName) or (fields.showProfile) or (fields.showEmail):
+    if(fields.showName) or (fields.showProfile):
         graphSpecs.append([{'type' : 'table'}])
         subPlotTitles.append('Participant Information')
     if(fields.showMajor):
@@ -111,7 +108,7 @@ def buildGraphs(fields):
     allFigs = make_subplots(rows = len(graphSpecs),cols = 1, vertical_spacing = SUBPLOT_VERTICAL_SPACING, specs = graphSpecs, subplot_titles = subPlotTitles)
     rowCounter = 1
     
-    if(fields.showName) or (fields.showProfile) or (fields.showEmail):
+    if(fields.showName) or (fields.showProfile):
         headerLabels = []
         values = []
         if(fields.showName):    
@@ -120,9 +117,6 @@ def buildGraphs(fields):
         if(fields.showProfile): 
             headerLabels.append('Profile')
             values.append(profile)
-        if(fields.showEmail):   
-            headerLabels.append('Email')
-            values.append(email)
         
         personalInfoTable = go.Table(header = dict(values=headerLabels,
                                                    font=dict(color=TABLE_HEADER_FONT_COLOR,size=TABLE_HEADER_FONT_SIZE),
@@ -172,7 +166,6 @@ parser.add_argument('-m', '--major',   dest='showMajor',   action='store_true', 
 parser.add_argument('-r', '--role',    dest='showRole',    action='store_true', help='Show role data')
 parser.add_argument('-y', '--year',    dest='showYear',    action='store_true', help='Show year data')
 parser.add_argument('-p', '--profile', dest='showProfile', action='store_true', help='Show profile data')
-parser.add_argument('-e', '--email',   dest='showEmail',   action='store_true', help='Show email data')
 parser.add_argument('-l', '--favlang', dest='showFavLang', action='store_true', help='Show favorite langauge data')
 parser.add_argument('-b', '--hobbies', dest='showHobbies', action='store_true', help='Show hobby data')
 

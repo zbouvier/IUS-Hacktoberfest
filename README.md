@@ -1,3 +1,11 @@
+   * [IUS-Hacktoberfest](#ius-hacktoberfest)
+      * [How do I get my name added](#how-do-i-get-my-name-added)
+      * [Running IUS-Hacktoberfest in a python virtual environment](#running-ius-hacktoberfest-in-a-python-virtual-environment)
+         * [Pre-work](#pre-work)
+         * [Install dependencies](#install-dependencies)
+         * [Run the app](#run-the-app)
+         * [Done!](#done)
+         
 # IUS-Hacktoberfest
 
 A collection of data points and a data visualization model for the 2019 Hacktoberfest at IUS
@@ -5,6 +13,8 @@ A collection of data points and a data visualization model for the 2019 Hacktobe
 The goal of this program is to provide IUS data science students with some information about our local hacktoberfest participation.
 
 To have your name added to the JSON you must be an IU student, but if anyone wants to think of interesting ways to show that data, they are welcome to.
+
+
 ## How do I get my name added
 
 The format for your new addition should look like this: (TODO)

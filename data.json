@@ -36,6 +36,18 @@
             "favoriteLanguages": ["Go", "F#"],
             "hobbies": ["Cats", "Giving Hard Homework Assignments", "Reddit"]
         }
+    },
+    {
+        "name": "Adam Isaac",
+        "major": "Informatics",
+        "role": "Student",
+        "year": "Sophomore",
+        "profile": "https://github.com/TheOtherUnknown",
+        "optionalInformation": 
+        {
+            "favoriteLanguages": ["Ruby", "Python"],
+            "hobbies": ["Paintball", "Drones"]
+        }
     }
     ]
 }

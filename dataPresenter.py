@@ -1,5 +1,6 @@
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
+import plotly.io as pio
 from dataProcessor import parseLabels, parseLangs
 
 years = parseLabels()
@@ -22,6 +23,5 @@ fig.add_trace(go.Pie(values = list(years.values()), labels = list(years.keys()))
 
 fig.update_layout(height=600)
 
-fig.show()
-
+pio.write_html(fig, 'index.html', auto_open=True)
 

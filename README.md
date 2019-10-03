@@ -176,4 +176,5 @@ Since we're now done, we can deactivate the venv (or just close your terminal se
 ## Running IUS-Hacktoberfest in Docker
 1. Clone the repo, and enter the directory
 2. Build the Docker image: `docker build -t NAME .`
-3. Run the container: `docker run -it --rm NAME`
+3. Run the container: `docker run -d -p 8000:8000 NAME`
+4. Check out the graph by browsing to: `localhost:8000`

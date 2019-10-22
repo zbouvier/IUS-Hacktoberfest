@@ -22,4 +22,5 @@ RUN python dataPresenter.py
 
 # could get fancy and wrap all this stuff in Flask or something
 # but we're just going simple and using python's built-in http server
+# 47150 chosen as port since it is IUS's ZIP Code, ;)
 CMD ["python", "-m", "http.server", "47150"]

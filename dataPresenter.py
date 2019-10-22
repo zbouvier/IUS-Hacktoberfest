@@ -2,6 +2,8 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import plotly.io as pio
 from dataProcessor import parseLabels, parseLangs
+import plotly.io as pio
+import os 
 
 years = parseLabels()
 langs = parseLangs()

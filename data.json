@@ -48,6 +48,18 @@
             "favoriteLanguages": ["Ruby", "Python"],
             "hobbies": ["Paintball", "Drones"]
         }
+    },
+    {
+        "name": "Greg Witt",
+        "major": "Computer Science",
+        "role": "Student",
+        "year": "Senior",
+        "profile": "https://github.com/GoodGuyGregory",
+        "optionalInformation":
+        {
+            "favoriteLanguages": ["Javascript", "Java", "Python", "Ruby" ],
+            "hobbies": ["Beer", "Musician", "Hiking","Web-Dev"]
+        }
     }
     ]
 }

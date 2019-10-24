@@ -1,17 +1,26 @@
-FROM python:3
+# Good practice to be specific about the version
+# so that the build is truly reproducible
+FROM python:3.7.4-slim-buster
 
-ENV CONTAINER true
+# Another good practice is to copy dependency file
+# first and install, so in future pulls you can
+# leverage layer caching; this layer will only repull
+# if requirements.txt changes with new dependencies
+COPY requirements.txt /tmp/
 
-RUN mkdir /app
+RUN pip install -r /tmp/requirements.txt
 
-COPY *.* /app/
-
+# No need to RUN mkdir, as WORKDIR makes the directory
+# and does a cd into it for you as well
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+# now we copy the rest of the app code, excluding things 
+# that are in .dockerignore like .venv and generated files
+COPY . .
 
 RUN python dataPresenter.py
 
-EXPOSE 8000/tcp
-
-CMD [ "python", "-m", "http.server" ]
+# could get fancy and wrap all this stuff in Flask or something
+# but we're just going simple and using python's built-in http server
+# 47150 chosen as port since it is IUS's ZIP Code, ;)
+CMD ["python", "-m", "http.server", "47150"]
